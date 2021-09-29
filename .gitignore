@@ -1,5 +1,3 @@
- .idea/.gitignore
- .idea/demo-project.iml
- .idea/inspectionProfiles/profiles_settings.xml
- .idea/misc.xml
- .idea/modules.xml
+/.idea
+/.idea/**
+
