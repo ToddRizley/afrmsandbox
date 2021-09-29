@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Affirm Checkout Demo</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="text/javascript" src="../static/js/home.js"></script>
+    <script>
+    _affirm_config = {
+       <!-- Public API Key for Affirm -->
+       public_api_key:  "ZTU0I0ISF56MS5W9",
+       script:          "https://cdn1-sandbox.affirm.com/js/v2/affirm.js"
+     };
+    (function(m,g,n,d,a,e,h,c){var b=m[n]||{},k=document.createElement(e),p=document.getElementsByTagName(e)[0],l=function(a,b,c){return function(){a[b]._.push([c,arguments])}};b[d]=l(b,d,"set");var f=b[d];b[a]={};b[a]._=[];f._=[];b._=[];b[a][h]=l(b,a,h);b[c]=function(){b._.push([h,arguments])};a=0;for(c="set add save post open empty reset on off trigger ready setProduct".split(" ");a<c.length;a++)f[c[a]]=l(b,d,c[a]);a=0;for(c=["get","token","url","items"];a<c.length;a++)f[c[a]]=function(){};k.async=
+    !0;k.src=g[e];p.parentNode.insertBefore(k,p);delete g[e];f(g);m[n]=b})(window,_affirm_config,"affirm","checkout","ui","script","ready","jsReady");
+</script>
+</head>
+    <body>
+        <h1>My Cart</h1>
+        <h3>Items</h3>
+        <hr>
+        <img src="https://media.musiciansfriend.com/is/image/MMGS7/Double-Agent-OG-Roasted-Maple-Fingerboard-Electric-Guitar-Metallic-Alpine/L78139000002000-00-500x500.jpg" alt="Reverend Guitar" style="width:250px;height:250px;">
+        <h4> Reverend Guitar "Double Agent", Metallic Alpine</h4>
+        <h5>Price: $1100.00</h5>
+        <form oninput="x.value=parseInt(quantity.value)*1100">
+            <label for="quantity">Quantity</label>
+            <input type="number" id="quantity" name="quantity" min="1" size="4"><br><br>
+            <label>Subtotal: </label>
+            $<output name="x" for="quantity" id="subtotal"></output>
+            <br><br>
+
+        </form>
+        <h3>Checkout</h3>
+        <hr>
+            <form onsubmit="return false">
+                <label for="fname">First Name:</label>
+                <input type="text" id="fname" name="fname"><br><br>
+                <label for="lname">Last Name:</label>
+                <input type="text" id="lname" name="lname"><br><br>
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="email"><br><br>
+                <label for="phone">Phone Number:</label>
+                <input type="text" id="phone" name="phone"><br><br>
+                <label for="address1">Address 1:</label>
+                <input type="text" id="address1" name="address1"><br><br>
+                <label for="address2">Address 2:</label>
+                <input type="text" id="address2" name="address2"><br><br>
+                <label for="city">City:</label>
+                <input type="text" id="city" name="city"><br><br>
+                <label for="state">State:</label>
+                <input type="text" id="state" name="state"><br><br>
+                <label for="zipcode">Zipcode:</label>
+                <input type="text" id="zipcode" name="zipcode"><br><br>
+                <input type="submit" value="Pay With Affirm!" onclick="handleFormSubmit()"> </input>
+            </form>
+    </body>
+</html>
